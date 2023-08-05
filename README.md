@@ -8,7 +8,7 @@
 2. Create a user in 'pgAdmin'.
 3. Create a database & name the database as your wish.
 
-## .env file
+## '.env' file
 
 1. create '.env' file in root directory.
 2. Copy the code from 'sample.env' file.
@@ -18,6 +18,10 @@
    POSTGRES_PASSWORD=
    POSTGRES_DATABASE=
    You can set other variable as your wish.
+
+## JWT secret key
+
+Must fill the variable 'AUTH_SECRET' , 'AUTH_ACCESS_TOKEN_EXPIRY' for JWT secret key.
 
 ## Installation
 
@@ -53,16 +57,11 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Support
+## Insert Data
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+After successfully running the project we have to insert some data.
+Please run the queries what written in 'db-scripts.sql' file.
 
-## Stay in touch
+## Swagger API Documentation
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Visit the given link in the log for the detailed API documentation.

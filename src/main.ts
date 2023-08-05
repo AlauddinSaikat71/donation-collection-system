@@ -7,6 +7,7 @@ import helmet from 'helmet';
 import { AppModule } from './app.module';
 
 declare const module: any;
+const Swagger = 'swagger';
 
 async function bootstrap() {
   const logger = new Logger();
@@ -27,11 +28,14 @@ async function bootstrap() {
     .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, swaggerOptions);
-  SwaggerModule.setup('docs', app, document);
+  SwaggerModule.setup(Swagger, app, document);
 
   const port = config.get<number>('PORT');
 
   await app.listen(port);
+  logger.log(
+    `For API documentation visit here: ${await app.getUrl()}/${Swagger}`,
+  );
   logger.log(`Application is running on : ${await app.getUrl()}`);
 
   if (module.hot) {
